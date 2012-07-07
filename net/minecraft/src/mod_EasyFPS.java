@@ -4,14 +4,12 @@ import java.util.List;
 import java.util.Iterator;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.src.vazkii.updatemanager.IUMAdvanced;
-import net.minecraft.src.vazkii.updatemanager.IUpdateManager;
-import net.minecraft.src.vazkii.updatemanager.ModType;
-import net.minecraft.src.vazkii.updatemanager.UMCore;
 
 import org.lwjgl.input.Keyboard;
 
-public class mod_EasyFPS extends BaseMod implements IUpdateManager, IUMAdvanced{
+import vazkii.um.UpdateManagerMod;
+
+public class mod_EasyFPS extends BaseMod{
 	
 	private Minecraft mc = ModLoader.getMinecraftInstance();
 	
@@ -36,25 +34,18 @@ public class mod_EasyFPS extends BaseMod implements IUpdateManager, IUMAdvanced{
 	@MLProp public static String hex_60to120 = "43FF00";
 	@MLProp public static String hex_over120 = "00D4FF";
 	
-
-	
-    public mod_EasyFPS()
-    {
-    	UMCore.addMod(this);
-    	fpsEnabled = !disabledOnStartup;
-    	coloredIndicator = colorModeOnStartup;
-        ModLoader.setInGameHook(this, true, false);
-		ModLoader.registerKey(this, key, true);
-    }
-
     public String getVersion()
     {
-        return "by Vazkii. Version [1.6.1] for 1.2.5";
+        return "by Vazkii. Version [1.6.2] for 1.2.5";
     }
  
     public void load()
     {
-    	//BaseMod Abstract Method
+    	new UpdateHandler(this);
+    	fpsEnabled = !disabledOnStartup;
+    	coloredIndicator = colorModeOnStartup;
+        ModLoader.setInGameHook(this, true, false);
+		ModLoader.registerKey(this, key, true);
     }
 
     public boolean onTickInGame(float f, Minecraft minecraft)
@@ -134,7 +125,7 @@ public class mod_EasyFPS extends BaseMod implements IUpdateManager, IUMAdvanced{
 		String username = mc.thePlayer.username;
         String nameToCheck = "nil"; 
         NetClientHandler player = ((EntityClientPlayerMP)mc.thePlayer).sendQueue;
-        List list = player.playerNames;
+        List list = player.playerInfoList;
         Iterator iterator = list.iterator();
         GuiPlayerInfo info = null;
         int time = -1337;
@@ -152,24 +143,30 @@ public class mod_EasyFPS extends BaseMod implements IUpdateManager, IUMAdvanced{
         }return -1;
 	}
 
-	public String getModName() {
-		return "EasyFPS";
-	}
+	public class UpdateHandler extends UpdateManagerMod{
+		
+		public UpdateHandler(cpw.mods.fml.common.modloader.BaseMod m) {
+			super(m);
+		}
 
-	public String getChangelogURL() {
-		return "https://dl.dropbox.com/u/34938401/Mods/On%20Topic/Mods/EasyFPS/Changelog.txt";
-	}
+		public String getModName() {
+			return "EasyFPS";
+		}
 
-	public String getUpdateURL() {
-		return "https://dl.dropbox.com/u/34938401/Mods/On%20Topic/Mods/EasyFPS/Version.txt";
-	}
+		public String getChangelogURL() {
+			return "https://dl.dropbox.com/u/34938401/Mods/On%20Topic/Mods/EasyFPS/Changelog.txt";
+		}
 
-	public String getModURL() {
-		return "http://www.minecraftforum.net/topic/528166-123-mlforge-vazkiis-mods-ebonapi-last-updated-12512/";
-	}
+		public String getUpdateURL() {
+			return "https://dl.dropbox.com/u/34938401/Mods/On%20Topic/Mods/EasyFPS/Version.txt";
+		}
 
-	public ModType getModType() {
-		return ModType.UNDEFINED;
+		public String getModURL() {
+			return "http://www.minecraftforum.net/topic/528166-123-mlforge-vazkiis-mods-ebonapi-last-updated-12512/";
+		}
+		
+		public String getUMVersion(){
+			return "1.6.2";
+		}
 	}
-    
 }
