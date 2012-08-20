@@ -1,5 +1,7 @@
 package vazkii.easyfps.client;
 
+import net.minecraft.src.Item;
+import net.minecraft.src.ItemStack;
 import vazkii.codebase.common.VazkiiUpdateHandler;
 import cpw.mods.fml.common.Mod;
 
@@ -27,6 +29,11 @@ public class EasyFPSUpdateHandler extends VazkiiUpdateHandler {
 	@Override
 	public String getChangelogURL() {
 		return EasyFPSReference.CHANGELOG_URL;
+	}
+	
+	@Override
+	public ItemStack getIconStack(){
+		return new ItemStack(Item.bed);
 	}
 
 }

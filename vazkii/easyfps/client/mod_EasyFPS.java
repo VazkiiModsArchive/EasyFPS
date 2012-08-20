@@ -7,6 +7,7 @@ import vazkii.codebase.client.CornerText;
 import vazkii.codebase.common.CommonUtils;
 import vazkii.codebase.common.EnumVazkiiMods;
 import vazkii.codebase.common.IOUtils;
+import vazkii.um.common.ModConverter;
 import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -25,6 +26,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 		File cacheFile = IOUtils.getCacheFile(EnumVazkiiMods.EASYFPS);
 
 		new EasyFPSConfig(configFile);
+		new EasyFPSUpdateHandler(ModConverter.getMod(getClass()));
 
 		NBTTagCompound comp = IOUtils.getTagCompoundInFile(cacheFile);
 		fpsEnabled = comp.hasKey("fpsEnabled") ? comp.getBoolean("fpsEnabled") : true;
