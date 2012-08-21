@@ -15,7 +15,7 @@ public class EasyFPSCornerTextHandler implements ICornerTextHandler {
 	int totalFPS = 0;
 
 	@Override
-	public List<CornerTextEntry> updateCornerText() {
+	public List<CornerTextEntry> updateCornerText(float partialTicks) {
 		Minecraft mc = CommonUtils.getMc();
 
 		if (mc.gameSettings.showDebugInfo || !mod_EasyFPS.fpsEnabled) return null;

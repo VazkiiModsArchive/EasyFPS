@@ -22,7 +22,6 @@ public class EasyFPSConfig extends Configuration {
 	public static String hex_30to60 = "FFF30F"; 
 	public static String hex_60to120 = "43FF00"; 
 	public static String hex_over120 = "00D4FF"; 
-
 	//Props End ==============================================================================
 
 	public EasyFPSConfig(File file) {
@@ -31,6 +30,8 @@ public class EasyFPSConfig extends Configuration {
 		categories.remove(CATEGORY_BLOCK);
 		categories.remove(CATEGORY_ITEM);
 
+		load();
+		
 		Property propAverageFPSEnabled = getOrCreateBooleanProperty("averageFPSEnabled", CATEGORY_GENERAL, true);
 		propAverageFPSEnabled.comment = "Set to true to enable the Average FPS Indicator.";
 		averageFPSEnabled = propAverageFPSEnabled.getBoolean(true);
