@@ -30,9 +30,9 @@ public class EasyFPSUpdateHandler extends VazkiiUpdateHandler {
 	public String getChangelogURL() {
 		return EasyFPSReference.CHANGELOG_URL;
 	}
-	
+
 	@Override
-	public ItemStack getIconStack(){
+	public ItemStack getIconStack() {
 		return new ItemStack(Item.bed);
 	}
 
