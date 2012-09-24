@@ -31,7 +31,7 @@ public class EasyFPSKeyHandler extends KeyHandler {
 
 	@Override
 	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat) {
-		if (!types.equals(EnumSet.of(TickType.RENDER))) return;
+		if (!types.equals(EnumSet.of(TickType.RENDER)) || !tickEnd) return;
 
 		File cacheFile = IOUtils.getCacheFile(EnumVazkiiMods.EASYFPS);
 		NBTTagCompound comp = IOUtils.getTagCompoundInFile(cacheFile);
