@@ -12,7 +12,8 @@ public class EasyFPSConfig extends Configuration {
 
 	public TreeMap<String, Property> colorProps = new TreeMap();
 
-	//Props Start ============================================================================
+	// Props Start
+	// ============================================================================
 	public static boolean averageFPSEnabled = true;
 	public static boolean pingMeterEnabled = true;
 
@@ -23,7 +24,8 @@ public class EasyFPSConfig extends Configuration {
 	public static String hex_60to120 = "43FF00";
 	public static String hex_over120 = "00D4FF";
 
-	//Props End ==============================================================================
+	// Props End
+	// ==============================================================================
 
 	public EasyFPSConfig(File file) {
 		super(file);

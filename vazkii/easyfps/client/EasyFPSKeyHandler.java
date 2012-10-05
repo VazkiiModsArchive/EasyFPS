@@ -31,7 +31,7 @@ public class EasyFPSKeyHandler extends KeyHandler {
 
 	@Override
 	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat) {
-		if (!types.equals(EnumSet.of(TickType.RENDER))) return;
+		if (!types.equals(EnumSet.of(TickType.RENDER)) || !tickEnd) return;
 
 		File cacheFile = IOUtils.getCacheFile(EnumVazkiiMods.EASYFPS);
 		NBTTagCompound comp = IOUtils.getTagCompoundInFile(cacheFile);
@@ -41,8 +41,7 @@ public class EasyFPSKeyHandler extends KeyHandler {
 			mod_EasyFPS.fpsEnabled = CommonUtils.flipBoolean(mod_EasyFPS.fpsEnabled);
 			comp.setBoolean("fpsEnabled", mod_EasyFPS.fpsEnabled);
 			IOUtils.injectNBTToFile(comp, cacheFile);
-		}
-		else {
+		} else {
 			mod_EasyFPS.colorEnabled = CommonUtils.flipBoolean(mod_EasyFPS.colorEnabled);
 			comp.setBoolean("colorEnabled", mod_EasyFPS.colorEnabled);
 			IOUtils.injectNBTToFile(comp, cacheFile);
@@ -50,7 +49,8 @@ public class EasyFPSKeyHandler extends KeyHandler {
 	}
 
 	@Override
-	public void keyUp(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd) {}
+	public void keyUp(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd) {
+	}
 
 	@Override
 	public EnumSet<TickType> ticks() {
