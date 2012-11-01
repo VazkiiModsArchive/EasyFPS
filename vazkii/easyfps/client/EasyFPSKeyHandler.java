@@ -3,16 +3,17 @@ package vazkii.easyfps.client;
 import java.io.File;
 import java.util.EnumSet;
 
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.KeyBinding;
-import net.minecraft.src.NBTTagCompound;
-
 import org.lwjgl.input.Keyboard;
 
 import vazkii.codebase.client.ClientUtils;
 import vazkii.codebase.common.CommonUtils;
 import vazkii.codebase.common.EnumVazkiiMods;
 import vazkii.codebase.common.IOUtils;
+
+import net.minecraft.src.EntityPlayer;
+import net.minecraft.src.KeyBinding;
+import net.minecraft.src.NBTTagCompound;
+
 import cpw.mods.fml.client.registry.KeyBindingRegistry.KeyHandler;
 import cpw.mods.fml.common.TickType;
 

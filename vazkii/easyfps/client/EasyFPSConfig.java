@@ -35,35 +35,35 @@ public class EasyFPSConfig extends Configuration {
 
 		load();
 
-		Property propAverageFPSEnabled = getOrCreateBooleanProperty("averageFPSEnabled", CATEGORY_GENERAL, true);
+		Property propAverageFPSEnabled = get("averageFPSEnabled", CATEGORY_GENERAL, true);
 		propAverageFPSEnabled.comment = "Set to true to enable the Average FPS Indicator.";
 		averageFPSEnabled = propAverageFPSEnabled.getBoolean(true);
 
-		Property propPingMeterEnabled = getOrCreateBooleanProperty("pingMeterEnabled", CATEGORY_GENERAL, true);
+		Property propPingMeterEnabled = get("pingMeterEnabled", CATEGORY_GENERAL, true);
 		propPingMeterEnabled.comment = "Set to true to enable the Ping Meter on SMP.";
 		pingMeterEnabled = propPingMeterEnabled.getBoolean(true);
 
-		Property propHexDefault = getOrCreateProperty("default", CATEGORY_COLORS, "FFFFFF");
+		Property propHexDefault = get("default", CATEGORY_COLORS, "FFFFFF");
 		propHexDefault.comment = "The Hex code of the default FPS meter color.";
 		hex_default = propHexDefault.value;
 
-		Property propHexLessThan20 = getOrCreateProperty("fpsUnder20", CATEGORY_COLORS, "FF0400");
+		Property propHexLessThan20 = get("fpsUnder20", CATEGORY_COLORS, "FF0400");
 		propHexLessThan20.comment = "The Hex code of the FPS meter color when FPS is under 20.";
 		hex_lessThan20 = propHexLessThan20.value;
 
-		Property propHex20to30 = getOrCreateProperty("fps20to30", CATEGORY_COLORS, "FF5C05");
+		Property propHex20to30 = get("fps20to30", CATEGORY_COLORS, "FF5C05");
 		propHex20to30.comment = "The Hex code of the FPS meter color when FPS is under 30 and over 20.";
 		hex_20to30 = propHex20to30.value;
 
-		Property propHex30to60 = getOrCreateProperty("fps30to60", CATEGORY_COLORS, "FFF30F");
+		Property propHex30to60 = get("fps30to60", CATEGORY_COLORS, "FFF30F");
 		propHex30to60.comment = "The Hex code of the FPS meter color when FPS is under 60 and over 30.";
 		hex_30to60 = propHex30to60.value;
 
-		Property propHex60to120 = getOrCreateProperty("fps60to120", CATEGORY_COLORS, "43FF00");
+		Property propHex60to120 = get("fps60to120", CATEGORY_COLORS, "43FF00");
 		propHex60to120.comment = "The Hex code of the FPS meter color when FPS is under 120 and over 60.";
 		hex_60to120 = propHex60to120.value;
 
-		Property propHexOver120 = getOrCreateProperty("fpsOver120", CATEGORY_COLORS, "00D4FF");
+		Property propHexOver120 = get("fpsOver120", CATEGORY_COLORS, "00D4FF");
 		propHexOver120.comment = "The Hex code of the FPS meter color when FPS is over 120.";
 		hex_over120 = propHexOver120.value;
 
