@@ -3,16 +3,17 @@ package vazkii.easyfps.client;
 import java.io.File;
 import java.util.EnumSet;
 
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.KeyBinding;
-import net.minecraft.src.NBTTagCompound;
-
 import org.lwjgl.input.Keyboard;
 
 import vazkii.codebase.client.ClientUtils;
 import vazkii.codebase.common.CommonUtils;
 import vazkii.codebase.common.EnumVazkiiMods;
 import vazkii.codebase.common.IOUtils;
+
+import net.minecraft.src.EntityPlayer;
+import net.minecraft.src.KeyBinding;
+import net.minecraft.src.NBTTagCompound;
+
 import cpw.mods.fml.client.registry.KeyBindingRegistry.KeyHandler;
 import cpw.mods.fml.common.TickType;
 
@@ -41,8 +42,7 @@ public class EasyFPSKeyHandler extends KeyHandler {
 			mod_EasyFPS.fpsEnabled = CommonUtils.flipBoolean(mod_EasyFPS.fpsEnabled);
 			comp.setBoolean("fpsEnabled", mod_EasyFPS.fpsEnabled);
 			IOUtils.injectNBTToFile(comp, cacheFile);
-		}
-		else {
+		} else {
 			mod_EasyFPS.colorEnabled = CommonUtils.flipBoolean(mod_EasyFPS.colorEnabled);
 			comp.setBoolean("colorEnabled", mod_EasyFPS.colorEnabled);
 			IOUtils.injectNBTToFile(comp, cacheFile);
@@ -50,7 +50,8 @@ public class EasyFPSKeyHandler extends KeyHandler {
 	}
 
 	@Override
-	public void keyUp(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd) {}
+	public void keyUp(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd) {
+	}
 
 	@Override
 	public EnumSet<TickType> ticks() {

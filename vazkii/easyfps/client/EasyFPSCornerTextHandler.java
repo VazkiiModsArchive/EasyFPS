@@ -3,12 +3,12 @@ package vazkii.easyfps.client;
 import java.util.LinkedList;
 import java.util.List;
 
-import net.minecraft.client.Minecraft;
 import vazkii.codebase.client.ClientUtils;
 import vazkii.codebase.client.CornerTextEntry;
 import vazkii.codebase.client.ICornerTextHandler;
 import vazkii.codebase.client.handlers.ClientTickHandler;
 import vazkii.codebase.common.CommonUtils;
+import net.minecraft.client.Minecraft;
 
 public class EasyFPSCornerTextHandler implements ICornerTextHandler {
 
